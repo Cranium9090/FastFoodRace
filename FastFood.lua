@@ -74,12 +74,7 @@ Section:NewToggle("auto rebirth", "gamer", function(state)
         wait(.1)
     end
 end)
-Section:NewButton("Rejoin", "rejoins same server", function()
-    local ts = game:GetService("TeleportService")
-	local p = game:GetService("Players").LocalPlayer
-	ts:Teleport(game.PlaceId, p)
-end)
-local Tab = Window:NewTab("Eggs")
+local Tab = Window:NewTab("Manual Eggs")
 local Section = Tab:NewSection("Buy 1")
 Section:NewButton("Buy 1 1st egg", "buys the ", function()
 local args = {
@@ -137,6 +132,144 @@ local args = {
     [2] = "4"
 }
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Pets"):FireServer(unpack(args))
+end)
+local Tab = Window:NewTab("Auto Eggs")
+local Section = Tab:NewSection("Buy 1")
+Section:NewToggle("Buy 1 1st egg", "e", function(state)
+    if state then
+        egg11cond = true
+    while egg11cond==true do
+        local args = {
+            [1] = "Buy1",
+            [2] = "1"
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Pets"):FireServer(unpack(args))
+        task.wait()
+    end
+    else
+        egg11cond = false
+        print("no more egg")
+    end
+end)
+Section:NewToggle("Buy 1 2nd egg", "e", function(state)
+    if state then
+        egg12cond = true
+    while egg12cond==true do
+        local args = {
+            [1] = "Buy1",
+            [2] = "2"
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Pets"):FireServer(unpack(args))
+        task.wait()
+    end
+    else
+        egg12cond = false
+        print("no more egg")
+    end
+end)
+Section:NewToggle("Buy 1 3rd egg", "e", function(state)
+    if state then
+        egg13cond = true
+    while egg13cond==true do
+        local args = {
+            [1] = "Buy1",
+            [2] = "3"
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Pets"):FireServer(unpack(args))
+        task.wait()
+    end
+    else
+        egg13cond = false
+        print("no more egg")
+    end
+end)
+Section:NewToggle("Buy 1 4th egg", "e", function(state)
+    if state then
+        egg14cond = true
+    while egg14cond==true do
+        local args = {
+            [1] = "Buy1",
+            [2] = "4"
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Pets"):FireServer(unpack(args))
+        task.wait()
+    end
+    else
+        egg14cond = false
+        print("no more egg")
+    end
+end)
+local Section = Tab:NewSection("Buy 3 (REQUIRES GAMEPASS)")
+Section:NewToggle("Buy 3 1st egg", "e", function(state)
+    if state then
+        egg11cond = true
+    while egg11cond==true do
+        local args = {
+            [1] = "Buy3",
+            [2] = "1"
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Pets"):FireServer(unpack(args))
+        task.wait()
+    end
+    else
+        egg11cond = false
+        print("no more egg")
+    end
+end)
+Section:NewToggle("Buy 3 2nd egg", "e", function(state)
+    if state then
+        egg12cond = true
+    while egg12cond==true do
+        local args = {
+            [1] = "Buy3",
+            [2] = "2"
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Pets"):FireServer(unpack(args))
+        task.wait()
+    end
+    else
+        egg12cond = false
+        print("no more egg")
+    end
+end)
+Section:NewToggle("Buy 3 3rd egg", "e", function(state)
+    if state then
+        egg13cond = true
+    while egg13cond==true do
+        local args = {
+            [1] = "Buy3",
+            [2] = "3"
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Pets"):FireServer(unpack(args))
+        task.wait()
+    end
+    else
+        egg13cond = false
+        print("no more egg")
+    end
+end)
+Section:NewToggle("Buy 3 4th egg", "e", function(state)
+    if state then
+        egg14cond = true
+    while egg14cond==true do
+        local args = {
+            [1] = "Buy3",
+            [2] = "4"
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Pets"):FireServer(unpack(args))
+        task.wait()
+    end
+    else
+        egg14cond = false
+        print("no more egg")
+    end
+end)
+local Tab = Window:NewTab("Misc")
+local Section = Tab:NewSection("Misc")
+Section:NewButton("Rejoin", "rejoins same server", function()
+    local ts = game:GetService("TeleportService")
+	local p = game:GetService("Players").LocalPlayer
+	ts:Teleport(game.PlaceId, p)
 end)
 Section:NewKeybind("Open/Close GUI", "YEP", Enum.KeyCode.G, function()
 	Library:ToggleUI()
