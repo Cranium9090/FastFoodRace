@@ -74,6 +74,56 @@ Section:NewToggle("auto rebirth", "gamer", function(state)
         wait(.1)
     end
 end)
+local Tab = Window:NewTab("Teleports")
+local Section = Tab:NewSection("Where go?")
+Section:NewButton("TP to Earth", "goes", function()
+    local args = {
+        [1] = "TP",
+        [2] = "1"
+    }
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Pasante"):FireServer(unpack(args))
+    local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+	local location = CFrame.new(-222, 33, -2031)
+	local humanoid = game.Players.LocalPlayer.Character.Humanoid
+	task.wait()
+	pl.CFrame = location
+end)
+Section:NewButton("TP to Moon", "goes", function()
+    local args = {
+        [1] = "TP",
+        [2] = "2"
+    }
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Pasante"):FireServer(unpack(args))
+    local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+	local location = CFrame.new(-3404, 33, -2025)
+	local humanoid = game.Players.LocalPlayer.Character.Humanoid
+	task.wait()
+	pl.CFrame = location
+end)
+Section:NewButton("TP to Egypt", "goes", function()
+    local args = {
+        [1] = "TP",
+        [2] = "3"
+    }
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Pasante"):FireServer(unpack(args))
+    local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+	local location = CFrame.new(-6582, 33, -2022)
+	local humanoid = game.Players.LocalPlayer.Character.Humanoid
+	task.wait()
+	pl.CFrame = location
+end)
+Section:NewButton("TP to Anime", "goes", function()
+    local args = {
+        [1] = "TP",
+        [2] = "4"
+    }
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Pasante"):FireServer(unpack(args))
+    local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+	local location = CFrame.new(-9827, 33, -1966)
+	local humanoid = game.Players.LocalPlayer.Character.Humanoid
+	task.wait()
+	pl.CFrame = location
+end)
 local Tab = Window:NewTab("Manual Eggs")
 local Section = Tab:NewSection("Buy 1")
 Section:NewButton("Buy 1 1st egg", "buys the ", function()
