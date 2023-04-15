@@ -2,7 +2,7 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
 local Window = Library.CreateLib("Fast Food Race!! | Cranium#9090", "Ocean")
 
 local Tab = Window:NewTab("Main")
-local Section = Tab:NewSection("Coins")
+local Section = Tab:NewSection("Fart")
 Section:NewButton("Manual Gas", "not as laggy", function()
     local args = {
         [1] = "Anim",
@@ -58,6 +58,21 @@ Section:NewToggle("Instant Fly", "gamer", function(state)
         wait(.1)
     end
 end)
+Section:NewToggle("Auto Evolve All", "Fart", function(state)
+    if state then
+        fartcond = true
+    while fartcond==true do
+        local args = {
+            [1] = "EvolveAll"
+        }
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Pets"):FireServer(unpack(args))
+        task.wait(.5)
+    end
+    else
+        fartcond = false
+        print("no more fart")
+    end
+end)
 Section:NewToggle("auto rebirth", "gamer", function(state)
     if state then
         rebirthcond = true
@@ -65,13 +80,41 @@ Section:NewToggle("auto rebirth", "gamer", function(state)
         local args = {
             [1] = "Rebirthear"
         }
-        game.GetService.ReplicatedStorage.Remotes.Pasante:FireServer(unpack(args))
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Pasante"):FireServer(unpack(args))
         wait(0.1)
     end
     else
         rebirthcond = false
         print("no more rebirth")
         wait(.1)
+    end
+end)
+Section:NewToggle("Auto claim rewards", "does the yes", function(state)
+    if state then
+        autoboost = true
+    while autoboost==true do
+        game.ReplicatedStorage.Remotes.Pasante:FireServer("ReclamarRecom",1)
+        task.wait()
+        game.ReplicatedStorage.Remotes.Pasante:FireServer("ReclamarRecom",2)
+        task.wait()
+        game.ReplicatedStorage.Remotes.Pasante:FireServer("ReclamarRecom",3)
+        task.wait()
+        game.ReplicatedStorage.Remotes.Pasante:FireServer("ReclamarRecom",4)
+        task.wait()
+        game.ReplicatedStorage.Remotes.Pasante:FireServer("ReclamarRecom",5)
+        task.wait()
+        game.ReplicatedStorage.Remotes.Pasante:FireServer("ReclamarRecom",6)
+        task.wait()
+        game.ReplicatedStorage.Remotes.Pasante:FireServer("ReclamarRecom",7)
+        task.wait()
+        game.ReplicatedStorage.Remotes.Pasante:FireServer("ReclamarRecom",8)
+        task.wait()
+        game.ReplicatedStorage.Remotes.Pasante:FireServer("ReclamarRecom",9)
+        task.wait()
+    end
+    else
+        autoboost = false
+        print("no more bingo")
     end
 end)
 local Tab = Window:NewTab("Teleports")
@@ -125,6 +168,7 @@ Section:NewButton("TP to Anime", "goes", function()
 	pl.CFrame = location
 end)
 local Tab = Window:NewTab("Manual Eggs")
+local Section = Tab:NewSection("(You need enough money and space to buy eggs)")
 local Section = Tab:NewSection("Buy 1")
 Section:NewButton("Buy 1 1st egg", "buys the ", function()
 local args = {
@@ -184,6 +228,7 @@ local args = {
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Pets"):FireServer(unpack(args))
 end)
 local Tab = Window:NewTab("Auto Eggs")
+local Section = Tab:NewSection("(You need enough money and space to buy eggs)")
 local Section = Tab:NewSection("Buy 1")
 Section:NewToggle("Buy 1 1st egg", "e", function(state)
     if state then
